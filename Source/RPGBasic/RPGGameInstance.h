@@ -18,9 +18,12 @@ class RPGBASIC_API URPGGameInstance : public UGameInstance
 	URPGGameInstance(const class FObjectInitializer & ObjectInitializer);
 
 public:
-
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Game Data")
 	TArray<UGameCharacter*> PartyMembers;
-	
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Game Data")
+	bool TalkShop;
+
 protected:
 	bool isInitialized;
 
