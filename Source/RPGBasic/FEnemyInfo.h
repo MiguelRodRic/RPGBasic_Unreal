@@ -29,5 +29,7 @@ int32 Luck;
 UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "EnemyInfo")
 TArray<FString> Abilities;
 
+UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "EnemyInfo")
+int32 Gold;
 
 };

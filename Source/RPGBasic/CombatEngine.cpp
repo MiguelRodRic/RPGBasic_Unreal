@@ -105,16 +105,20 @@ bool CombatEngine::Tick(float DeltaSeconds)
 	}
 
 
+	int32 Gold = 0;
+
 	//check for victory
 	deadCount = 0;
 	for (int i = 0; i < this->EnemyParty.Num(); ++i) {
 		if (this->EnemyParty[i]->HP <= 0) {
 			++deadCount;
 		}
+		Gold += this->EnemyParty[i]->Gold;
 	}
 
 	if (deadCount == this->EnemyParty.Num()) {
 		this->SetPhase(CombatPhase::CPHASE_Victory);
+		GoldTotal = Gold;
 		return false;
 	}
 

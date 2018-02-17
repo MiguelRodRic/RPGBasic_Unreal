@@ -35,14 +35,18 @@ void ARPGGameMode::Tick(float DeltaTime)
 			else if (this->currentCombatInstance->phase == CombatPhase::CPHASE_Victory) 
 			{
 				UE_LOG(LogTemp, Log, TEXT("Player wins combat!"));
+				URPGGameInstance* gameInstance = Cast<URPGGameInstance>(GetGameInstance());
+				gameInstance->GameGold += this->currentCombatInstance->GoldTotal;
+
+				//enable player actor
+				UGameplayStatics::GetPlayerController(GetWorld(), 0)->SetActorTickEnabled(true);
 			}
 
 			for (int i = 0; i < this->currentCombatInstance->PlayerParty.Num(); ++i) {
 				this->currentCombatInstance->PlayerParty[i]->decisionMaker = nullptr;
 			}
 
-			//enable player actor
-			UGameplayStatics::GetPlayerController(GetWorld(), 0)->SetActorTickEnabled(true);
+			
 
 			this->CombatUIInstance->RemoveFromViewport();
 			this->CombatUIInstance = nullptr;

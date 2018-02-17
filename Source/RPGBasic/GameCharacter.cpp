@@ -49,6 +49,7 @@ UGameCharacter * UGameCharacter::CreateGameCharacter(FEnemyInfo * enemyInfo, UOb
 	character->ATK = enemyInfo->ATK;
 	character->DEF = enemyInfo->DEF;
 	character->LUCK = enemyInfo->Luck;
+	character->Gold = enemyInfo->Gold;
 	character->isPlayer = false;
 	return character;
 }

@@ -27,7 +27,7 @@ void ARPGCharacter::MoveVertical(float Value)
 void ARPGCharacter::MoveHorizontal(float Value)
 {
 	if (Controller != NULL && Value != 0.0f) {
-		const FVector moveDir = FVector(1, 0, 0);
+		const FVector moveDir = FVector(0, 1, 0);
 		AddMovementInput(moveDir, Value);
 	}
 }

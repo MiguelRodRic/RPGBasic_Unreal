@@ -27,6 +27,8 @@ public:
 
 	bool waitingForCharacter;
 
+	int32 GoldTotal;
+
 protected:
 	UGameCharacter * currentTickTarget;
 	int tickTargetIndex;
