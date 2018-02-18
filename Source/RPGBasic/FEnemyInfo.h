@@ -32,4 +32,6 @@ TArray<FString> Abilities;
 UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "EnemyInfo")
 int32 Gold;
 
+UPROPERTY(BlueprintReadOnly, EditAnywhere, Category = "EnemyInfo")
+int32 XP;
 };

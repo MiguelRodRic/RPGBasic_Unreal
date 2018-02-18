@@ -38,8 +38,22 @@ void ARPGGameMode::Tick(float DeltaTime)
 				URPGGameInstance* gameInstance = Cast<URPGGameInstance>(GetGameInstance());
 				gameInstance->GameGold += this->currentCombatInstance->GoldTotal;
 
+				for (int i = 0; i < gameInstance->PartyMembers.Num(); ++i) {
+					gameInstance->PartyMembers[i]->XP += this->currentCombatInstance->XPTotal;
+					if (gameInstance->PartyMembers[i]->XP >= gameInstance->PartyMembers[i]->MXP) {
+						gameInstance->PartyMembers[i]->Lvl++;
+						gameInstance->PartyMembers[i]->MHP++;
+						gameInstance->PartyMembers[i]->MMP++;
+						gameInstance->PartyMembers[i]->ATK++;
+						gameInstance->PartyMembers[i]->DEF++;
+						gameInstance->PartyMembers[i]->LUCK++;
+						gameInstance->PartyMembers[i]->MXP += gameInstance->PartyMembers[i]->MXP;
+					}
+				}
+
 				//enable player actor
 				UGameplayStatics::GetPlayerController(GetWorld(), 0)->SetActorTickEnabled(true);
+				
 			}
 
 			for (int i = 0; i < this->currentCombatInstance->PlayerParty.Num(); ++i) {

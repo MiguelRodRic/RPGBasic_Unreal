@@ -11,11 +11,10 @@ struct FCharacterInfo : public FTableRowBase
 {
 	GENERATED_USTRUCT_BODY()
 	
-UPROPERTY(BlueprintReadWrite, EditAnywhere, Category ="CharacterInfo")
-FString Character_Name;
-UPROPERTY(BlueprintReadOnly, EditAnywhere, Category ="CharacterInfo")
-FString Class_ID;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category ="CharacterInfo")
+	FString Character_Name;
 
-	
-	
+	UPROPERTY(BlueprintReadOnly, EditAnywhere, Category ="CharacterInfo")
+	FString Class_ID;
+
 };

@@ -29,6 +29,8 @@ public:
 
 	int32 GoldTotal;
 
+	int32 XPTotal;
+
 protected:
 	UGameCharacter * currentTickTarget;
 	int tickTargetIndex;

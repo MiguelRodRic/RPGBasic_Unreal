@@ -29,8 +29,13 @@ UGameCharacter * UGameCharacter::CreateGameCharacter(FCharacterInfo * characterI
 		character->DEF = character->ClassInfo->StartDEF;
 		character->LUCK = character->ClassInfo->StartLuck;
 
+		character->XP = character->ClassInfo->XP;
+		character->MXP = character->ClassInfo->MXP;
+		character->Lvl = character->ClassInfo->Lvl;
+
+		character->isPlayer = true;
 	}
-	character->isPlayer = true;
+	
 	return character;
 }
 
@@ -50,7 +55,10 @@ UGameCharacter * UGameCharacter::CreateGameCharacter(FEnemyInfo * enemyInfo, UOb
 	character->DEF = enemyInfo->DEF;
 	character->LUCK = enemyInfo->Luck;
 	character->Gold = enemyInfo->Gold;
+	character->XP = enemyInfo->XP;
+	
 	character->isPlayer = false;
+
 	return character;
 }
 

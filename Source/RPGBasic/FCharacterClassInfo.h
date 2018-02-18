@@ -52,4 +52,13 @@ struct FCharacterClassInfo : public FTableRowBase
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "ClassInfo")
 	TArray<int32> LearnedAbilityLevels;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "ClassInfo")
+	int32 XP;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "ClassInfo")
+	int32 MXP;
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "ClassInfo")
+	int32 Lvl;
 };
