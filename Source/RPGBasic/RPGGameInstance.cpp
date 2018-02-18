@@ -36,6 +36,8 @@ void URPGGameInstance::Init()
 
 	this->PartyMembers.Add(UGameCharacter::CreateGameCharacter(row, this));
 
+
+	GameGold = 200;
 }
 
 void URPGGameInstance::PrepareReset()
