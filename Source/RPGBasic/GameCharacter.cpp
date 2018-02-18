@@ -29,6 +29,8 @@ UGameCharacter * UGameCharacter::CreateGameCharacter(FCharacterInfo * characterI
 		character->DEF = character->ClassInfo->StartDEF;
 		character->LUCK = character->ClassInfo->StartLuck;
 
+		character->LearnedAbilities = character->ClassInfo->LearnedAbilities;
+
 		character->XP = character->ClassInfo->XP;
 		character->MXP = character->ClassInfo->MXP;
 		character->Lvl = character->ClassInfo->Lvl;
@@ -56,6 +58,7 @@ UGameCharacter * UGameCharacter::CreateGameCharacter(FEnemyInfo * enemyInfo, UOb
 	character->LUCK = enemyInfo->Luck;
 	character->Gold = enemyInfo->Gold;
 	character->XP = enemyInfo->XP;
+	
 	
 	character->isPlayer = false;
 

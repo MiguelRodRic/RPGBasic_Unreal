@@ -72,6 +72,9 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "CharacterInfo")
 	int32 Lvl;
 
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "CharacterInfo")
+	TArray<FString> LearnedAbilities;
+
 public:
 	static UGameCharacter* CreateGameCharacter(FCharacterInfo *characterInfo, UObject *outer);
 
